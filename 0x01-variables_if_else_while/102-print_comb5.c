@@ -12,30 +12,23 @@ int main(void)
 {
 
 	/* Lowercase Alphabet */
-	int i, j, k, l;
+	int i, j;
 
-	for (i = 48; i <= 57; i++)
+	for (i = 0; i <= 99; i++)
 	{
-		for (j = 48; j <= 57; j++)
+		for (j = 0; j <= 99; j++)
 		{
-			for (k = 48; k <= 57; k++)
+			if (i < j)
 			{
-				for (l = 48; l <= 57; l++)
+				putchar((i / 10) + 48);
+				putchar((i % 10) + 48);
+				putchar(' ');
+				putchar((j / 10) + 48);
+				putchar((j % 10) + 48);
+				if (i != 98 || j != 99)
 				{
-					if (i != k && j != l)
-					{
-						putchar(i);
-						putchar(j);
-						putchar(' ');
-						putchar(k);
-						putchar(l);
-
-						if ((char)i != '9' || (char)k != '9' || (char)j != '8' || (char)l != '9')
-						{
-							putchar(',');
-							putchar(' ');
-						}
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
 		}
