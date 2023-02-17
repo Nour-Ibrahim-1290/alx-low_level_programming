@@ -17,7 +17,7 @@ int main(void)
 	for (i = 48; i <= 57; i++)
 		putchar((char)i);
 
-	for (i = 97; i <= 104; i++)
+	for (i = 97; i <= 102; i++)
 		putchar((char)i);
 
 	/* New Line */
