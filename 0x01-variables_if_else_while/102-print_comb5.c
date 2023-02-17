@@ -20,7 +20,7 @@ int main(void)
 		{
 			for (k = 48; k <= 57; k++)
 			{
-				for (l = j+1; l <= 57; l++)
+				for (l = j + 1; l <= 57; l++)
 				{
 					putchar(i);
 					putchar(j);
@@ -31,6 +31,7 @@ int main(void)
 					if ((char)i != '9' || (char)k != '9' || (char)j != '8' || (char)l != '9')
 					{
 						putchar(',');
+						putchar(' ');
 					}
 				}
 			}
