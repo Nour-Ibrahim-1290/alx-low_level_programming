@@ -22,16 +22,19 @@ int main(void)
 			{
 				for (l = 48; l <= 57; l++)
 				{
-					putchar(i);
-					putchar(j);
-					putchar(' ');
-					putchar(k);
-					putchar(l);
-
-					if ((char)i != '9' || (char)k != '9' || (char)j != '8' || (char)l != '9')
+					if (i != k && j != l)
 					{
-						putchar(',');
+						putchar(i);
+						putchar(j);
 						putchar(' ');
+						putchar(k);
+						putchar(l);
+
+						if ((char)i != '9' || (char)k != '9' || (char)j != '8' || (char)l != '9')
+						{
+							putchar(',');
+							putchar(' ');
+						}
 					}
 				}
 			}
