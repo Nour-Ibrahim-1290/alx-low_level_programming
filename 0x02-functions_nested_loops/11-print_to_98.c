@@ -5,6 +5,8 @@
  *
  * Description: Printing Numbers from n to 98
  *
+ * @n: Int to print from
+ *
  * Return: void
  */
 
