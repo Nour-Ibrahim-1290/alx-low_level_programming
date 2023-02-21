@@ -11,10 +11,16 @@
 void jack_bauer(void)
 {
 	int i, j, k, l;
+	int max;
 
 	for (i = 0; i <= 2; i++)
 	{
-		for (j = 0; j < 10; j++)
+		if (i == 2)
+			max = 4;
+		else
+			max = 10;
+
+		for (j = 0; j < max; j++)
 		{
 			for (k = 0; k <= 5; k++)
 			{
