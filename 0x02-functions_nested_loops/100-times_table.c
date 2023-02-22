@@ -11,24 +11,21 @@
  * Return: void
  */
 
-void lower_n(int);
-void higher_n(int);
+void lower_n(int n);
+void higher_n(int n);
 
 void print_times_table(int n)
 {
 	if (n > 0 && n < 10)
 	{
-		lower_n(n);
+		higher_n(n);
 	}
 	else if (n < 15)
 	{
 		higher_n(n);
 	}
-	else
-	{
-		_putchar('\n');
-	}
 }
+
 
 /**
  * lower_n - print time table when n < 10
@@ -37,7 +34,6 @@ void print_times_table(int n)
  *
  * Return: void
  */
-
 void lower_n(int n)
 {
 
