@@ -3,11 +3,8 @@
 /**
  * main - Entry Point
  *
- * ReturnL Always 0.
+ * Return: Always 0.
  */
-
-int prime_factors(int);
-int max(int[]);
 
 int main(void)
 {
