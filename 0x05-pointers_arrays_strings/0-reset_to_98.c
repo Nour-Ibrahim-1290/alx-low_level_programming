@@ -4,6 +4,7 @@
  * reset_to_98 - Entry Point
  *
  * Description: resets an int to value 98
+ * @n: pointer to integer
  *
  * Return: void
  */
