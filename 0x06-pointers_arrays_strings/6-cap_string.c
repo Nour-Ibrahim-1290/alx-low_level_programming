@@ -18,8 +18,8 @@ char *cap_string(char *str)
 	{
 		while (*str == ' ' || *str == ',' || *str == ';' || *str == '.'
 				|| *str == '!' || *str == '?' || *str == '\"'
-				|| *str == '(' || *str == ')'
-				|| *str == '{' || *str == '}')
+				|| *str == '(' || *str == ')' || *str == '\t'
+				|| *str == '{' || *str == '}' || *str == '\n')
 		{
 			str++;
 			if (*str <= 'z' && *str >= 'a')
