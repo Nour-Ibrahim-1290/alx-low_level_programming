@@ -16,7 +16,6 @@ char *cap_string(char *str)
 
 	while (str[i])
 	{
-		
 		while (!(str[i] <= 'z' && str[i] >= 'a'))
 			i++;
 
