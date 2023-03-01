@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * leet - Entry Point
@@ -13,14 +14,15 @@ char *leet(char *str)
 {
 	char *ptr = str;
 	int i;
-	char sub[] = {'a', 'e', 'o', 't', 'l'};
+	char sub[] = {'A', 'E', 'O', 'T', 'L'};
 	char code[] = {'4', '3', '0', '7', '1'};
 
 	while (*str != '\0')
 	{
 		for (i = 0; i < 5; i++)
 		{
-			if (*str == sub[i] || (*str - 32) == sub[i])
+			printf("%c, %c\n", *str, *str + 32);
+			if ((*str == sub[i]) || ((*str - 32) == sub[i]))
 			{
 				*str = code[i];
 				break;
