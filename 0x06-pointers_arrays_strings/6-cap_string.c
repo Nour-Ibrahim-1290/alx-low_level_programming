@@ -21,6 +21,8 @@ char *cap_string(char *str)
 				|| *str == '(' || *str == ')' || *str == '\t'
 				|| *str == '{' || *str == '}' || *str == '\n')
 		{
+			if (*str == '\t')
+				*str = ' ';
 			str++;
 			if (*str <= 'z' && *str >= 'a')
 				*str = *str - 32;
