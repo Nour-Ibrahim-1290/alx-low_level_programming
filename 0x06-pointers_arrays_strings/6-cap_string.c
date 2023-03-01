@@ -12,23 +12,25 @@
 
 char *cap_string(char *str)
 {
-	int i = 0;
+	char *ptr = str;
 
-	while (str[i])
+	while (*str != '\0')
 	{
-		while (!(str[i] <= 'z' && str[i] >= 'a'))
-			i++;
 
-		if (str[i - 1] == ' ' || str[i - 1] == ','
-				|| str[i - 1] == ';' || str[i - 1] == '.'
-				|| str[i - 1] == '!' || str[i - 1] == '?'
-				|| str[i - 1] == '"' || str[i - 1] == '('
-				|| str[i - 1] == ')' || str[i - 1] == '\t'
-				|| str[i - 1] == '{' || str[i - 1] == '}'
-				|| str[i - 1] == '\n')
-			str[i] -= 32;
-		i++;
+		while ((int)*str == 32 || (int)*str == 44
+				|| (int)*str == 59 || (int)*str == 46
+				|| (int)*str == 33 || (int)*str == 63
+				|| (int)*str == 34 || (int)*str == 40
+				|| (int)*str == 41 || (int)*str == 9
+				|| (int)*str == 123 || (int)*str == 125
+				|| (int)*str == 10)
+		{
+			str++;
+			if (*str <= 'z' && *str >= 'a')
+				*str -= 32;
+		}
+		str++;
 	}
 
-	return (str);
+	return (ptr);
 }
