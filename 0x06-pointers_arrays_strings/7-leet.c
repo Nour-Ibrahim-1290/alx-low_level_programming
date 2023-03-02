@@ -12,22 +12,17 @@
 
 char *leet(char *str)
 {
-	char *ptr = str;
 	int i;
-	char sub[] = {'A', 'E', 'O', 'T', 'L'};
-	char sub2[] = {'a', 'e', 'o', 't', 'l'};
-	char code[] = {'4', '3', '0', '7', '1'};
+	char *ptr = str;
+	char sub[8] = {'O', 'L', '?', 'E', 'A', '?', '?', 'T'};
 
 	while (*str != '\0')
 	{
-		for (i = 0; i < 5; i++)
+		for (i = 0; i < 8; i++)
 		{
-			printf("%c, ", *str);
-			printf("\n");
-
-			if (*str == sub[i] || *str == sub2[i])
+			if (*str == sub[i] || *str == (sub[i] + 32))
 			{
-				*str = code[i];
+				*str = i + '0';
 				break;
 			}
 		}
