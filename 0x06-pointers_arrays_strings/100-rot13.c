@@ -12,14 +12,24 @@
 
 char *rot13(char *str)
 {
-	int i = 0;
+	int i = 0, key = 0;
 
 	while (str[i])
 	{
-		if ((str[i] >= 'N' && str[i] <= 'Z') || (str[i] >= 'n' && str[i] <= 'z'))
-			str[i] = str[i] - 13;
-		else if ((str[i] >= 'A' && str[i] < 'N') || (str[i] >= 'a' && str[i] < 'n'))
-			str[i] = str[i] + 13;
+		while ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		{
+			if (str[i] >= 'A' && str[i] <= 'Z')
+			{
+				key = ((str[i] - 'A') + 13) % 26;
+				str[i] = 'A' + key;
+			}
+			else
+			{
+				key = ((str[i] - 'a') + 13) % 26;
+				str[i] = 'a' + key;
+			}
+			i++;
+		}
 		i++;
 	}
 
