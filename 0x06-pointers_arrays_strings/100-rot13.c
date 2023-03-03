@@ -12,26 +12,24 @@
 
 char *rot13(char *str)
 {
-	int i = 0, key = 0;
+	int i, flag;
 
-	while (str[i])
+	i = 0;
+	while (*(str + i) != '\0')
 	{
-		while ((str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= 'a' && str[i] <= 'z'))
+		if ((*(str + i) >= 97 && *(str + i) <= 109)
+				|| (*(str + i) >= 65 && *(str + i) <= 77))
 		{
-			if (str[i] >= 'A' && str[i] <= 'Z')
-			{
-				key = ((str[i] - 'A') + 13) % 26;
-				str[i] = 'A' + key;
-			}
-			else
-			{
-				key = ((str[i] - 'a') + 13) % 26;
-				str[i] = 'a' + key;
-			}
-			i++;
+			*(str + i) += 13;
+		}
+		flag = 1;
+		while (((*(str + i) > 109 && *(str + i) <= 122)
+					|| (*(str + i) > 78 && *(str + i) <= 90)) && flag)
+		{
+			*(str + i) -= 13;
+			flag = 0;
 		}
 		i++;
 	}
-
 	return (str);
 }
