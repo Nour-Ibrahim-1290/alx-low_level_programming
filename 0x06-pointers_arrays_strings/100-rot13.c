@@ -12,19 +12,21 @@
 
 char *rot13(char *str)
 {
-	int i, flag;
+	int i, flag, k;
 
 	i = 0;
 	while (*(str + i) != '\0')
 	{
+		k = 1;
 		if ((*(str + i) >= 97 && *(str + i) <= 109)
 				|| (*(str + i) >= 65 && *(str + i) <= 77))
 		{
 			*(str + i) += 13;
+			k = 0;
 		}
 		flag = 1;
-		while (((*(str + i) > 109 && *(str + i) <= 122)
-					|| (*(str + i) > 78 && *(str + i) <= 90)) && flag)
+		while (((*(str + i) > 109 && *(str + i) <= 122 && k)
+					|| (*(str + i) > 78 && *(str + i) <= 90 && k)) && flag)
 		{
 			*(str + i) -= 13;
 			flag = 0;
