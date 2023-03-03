@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * cap_string: - Entry Point
+ * cap_string - Entry Point
  *
  * Description: Capatalize words
  * Separators are (, ; . ! ? \" ( ) { } and space)
@@ -23,7 +23,7 @@ char *cap_string(char *str)
 		{
 			if (str[i] >= 97 && str[i] <= 122)
 			{
-				if (i == 0 || str[i -1] == sep[j])
+				if (i == 0 || str[i - 1] == sep[j])
 				{
 					str[i] -= 32;
 				}
