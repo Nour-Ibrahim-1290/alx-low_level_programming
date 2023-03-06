@@ -35,6 +35,8 @@ int match(char *s1, char *s2)
 
 char *_strstr(char *heystack, char *needle)
 {
+	if (*needle == 0)
+		return (heystack);
 	while (*heystack != '\0')
 	{
 		if ((*heystack == *needle) && match(heystack, needle))
@@ -42,5 +44,5 @@ char *_strstr(char *heystack, char *needle)
 		heystack++;
 	}
 
-	return (NULL);
+	return ('\0');
 }
