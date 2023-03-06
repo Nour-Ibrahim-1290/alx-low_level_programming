@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <stdio.h>
 
 /**
  * match - match s2 from a specific beginning of s1
@@ -20,6 +20,7 @@ int match(char *s1, char *s2)
 		s2++;
 	}
 
+	printf("OUT MATCH %d\n", (*s2 == '\0'));
 	return (*s2 == '\0');
 }
 
@@ -43,5 +44,6 @@ char *_strstr(char *heystack, char *needle)
 		heystack++;
 	}
 
-	return (NULL);
+	printf("NULL\n");
+	return ("NULL");
 }
