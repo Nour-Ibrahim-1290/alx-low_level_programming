@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL ((void *)0)
 
 /**
  * match - match s2 from a specific beginning of s1
@@ -41,5 +42,5 @@ char *_strstr(char *heystack, char *needle)
 		heystack++;
 	}
 
-	return (heystack);
+	return (NULL);
 }
