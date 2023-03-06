@@ -20,7 +20,6 @@ int match(char *s1, char *s2)
 		s2++;
 	}
 
-	printf("OUT MATCH %d\n", (*s2 == '\0'));
 	return (*s2 == '\0');
 }
 
@@ -44,6 +43,5 @@ char *_strstr(char *heystack, char *needle)
 		heystack++;
 	}
 
-	printf("NULL\n");
 	return ("NULL");
 }
