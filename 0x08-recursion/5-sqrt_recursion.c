@@ -1,16 +1,18 @@
 #include "main.h"
 
+
 /**
- * _sqrt_recursion - the natural sqrt of a number n
- * if n is not a natural sqrt, the function should return -1
+ * isqrt - where the recursion process actually happens
  *
- * @n: number to find its sqrt
+ * @n: number to get sqrt for.
+ * @k: the sqrt
  *
- * Return: int.
+ * Return: int
  */
-int isqrt(int k, int n)
+
+unsigned long isqrt(unsigned long k, unsigned long n)
 {
-	int next_k = (k + (n / k)) / 2;
+	unsigned long next_k = (k + (n / k)) / 2;
 
 	if (k * k <= n && (k + 1) * (k + 1) > n)
 	{
@@ -21,9 +23,21 @@ int isqrt(int k, int n)
 	return (isqrt(next_k, n));
 }
 
+/**
+ * _sqrt_recursion - Entry Point
+ *
+ * Description: the natural sqrt of a number n
+ * if n is not a natural sqrt, the function should return -1
+ * @n: number to find its sqrt
+ *
+ * Return: int.
+ */
+
 int _sqrt_recursion(int n)
 {
+	unsigned long m = n;
+
 	if (n <= 0)
 		return (-1);
-	return (isqrt(1 , n));
+	return ((int)isqrt(1, m));
 }
