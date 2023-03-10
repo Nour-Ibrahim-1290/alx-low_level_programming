@@ -3,7 +3,8 @@
 
 /**
  * main - print the name of my program
- *
+ * @argc: number of commands
+ * @argv: array of commands
  * Return: Alawys 0.
  */
 
