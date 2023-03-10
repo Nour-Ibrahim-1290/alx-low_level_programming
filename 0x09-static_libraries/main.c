@@ -6,8 +6,9 @@
  * Return: Alawys 0.
  */
 
-int main(voi)
+int main(void)
 {
-	_puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- kevin Mitnick");
+	_puts("\"At the end of the day, my goal was to be
+			the best hacker\"\n\t- kevin Mitnick");
 	return (0);
 }
