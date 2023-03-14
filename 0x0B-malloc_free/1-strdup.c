@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-#include <sring.h>
+#include <string.h>
 /**
  * _strdup - duplicate a string and return pointer
  * to its where abouts
