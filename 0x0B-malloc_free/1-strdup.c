@@ -12,11 +12,17 @@
 
 char *_strdup(char *str)
 {
-	unsigned int size = strlen(str) + 1;
-	char *dup = (char *) malloc(size);
+	unsigned int size;
+	char *dup;
 	unsigned int i;
 
-	if ((str == NULL) || (dup == NULL))
+	if (str == NULL)
+		return (NULL);
+
+	size = strlen(str) + 1;
+	dup = (char *) malloc(size);
+
+	if (dup == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
