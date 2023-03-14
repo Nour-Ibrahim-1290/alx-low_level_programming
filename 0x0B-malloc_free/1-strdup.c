@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
-
+#include <sring.h>
 /**
  * _strdup - duplicate a string and return pointer
  * to its where abouts
@@ -12,7 +12,7 @@
 
 char *_strdup(char *str)
 {
-	unsigned int size = sizeof(str) - 1;
+	unsigned int size = strlen(str) + 1;
 	char *dup = (char *) malloc(size);
 	unsigned int i;
 
