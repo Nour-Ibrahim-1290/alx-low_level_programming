@@ -12,39 +12,32 @@
 
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int size, size1, size2;
+	unsigned int size = 0, i, j;
 	char *dup;
-	unsigned int i;
 
-	if ((s1 == NULL) && (s2 == NULL))
-		return (NULL);
-	else if (s1 == NULL)
-	{
-		size1 = 0;
-		size2 = strlen(s2);
-	}
-	else if (s2 == NULL)
-	{
-		size1 = strlen(s1);
-		size2 = 0;
-	}
-	else
-	{
-		size1 = strlen(s1);
-		size2 = strlen(s2);
-	}
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
-	size = size1 + size2 + 1;
-	dup = (char *) malloc(size);
+	for (i = 0; s1[i]; i++)
+		size++;
+
+	for (i = 0; s2[i]; i++)
+		size++;
+
+	dup = (char *) malloc(size + 1);
 
 	if (dup == NULL)
 		return (NULL);
 
-	for (i = 0; i < size1; i++)
+	for (i = 0; s1[i]; i++)
 		dup[i] = s1[i];
 
-	for (i = 0; i <= size2; i++)
-		dup[i + size1] = s2[i];
+	for (j = 0; s2[j]; j++)
+		dup[i + j] = s2[j];
+
+	dup[size] = '\0';
 
 	return (dup);
 }
