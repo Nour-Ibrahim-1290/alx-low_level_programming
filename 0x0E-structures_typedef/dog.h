@@ -16,5 +16,6 @@ typedef struct dog
 } dog_t;
 
 void init_dog(struct dog *, char *, float, char *);
+void print_dog(struct dog *);
 
 #endif
