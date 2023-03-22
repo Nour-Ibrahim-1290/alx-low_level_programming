@@ -34,7 +34,7 @@ int _strlen(char *str)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *a_dog;
-	int nl = 0, ol = 0;
+	int nl = 0, ol = 0, i;
 
 	a_dog = malloc(sizeof(struct dog));
 
@@ -62,12 +62,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	while (nl-- >= 0)
-		a_dog->name[nl] = name[nl];
+	for (i = 0; name[i]; i++)
+		a_dog->name[i] = name[i];
 	a_dog->age = age;
-
-	while (ol-- >= 0)
-		a_dog->owner[ol] = owner[ol];
+	for (i = 0; owner[i]; i++)
+		a_dog->owner[i] = owner[i];
 
 	return (a_dog);
 }
