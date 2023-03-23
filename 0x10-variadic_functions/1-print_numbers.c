@@ -20,7 +20,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(arg, n);
 
-	if (separator != NULL)
+	if (n > 0 && separator != NULL)
 	{
 		while (i < n)
 		{
