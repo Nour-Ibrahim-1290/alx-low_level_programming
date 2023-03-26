@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include <string.h>
 #include "variadic_functions.h"
 
 
@@ -74,8 +73,9 @@ void print_str(va_list arg)
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0, len;
+	int i = 0, j = 0;
 	va_list arg;
+	char *sep = "";
 	d_type data_type[] = {
 		{'c', print_char},
 		{'i', print_int},
@@ -85,20 +85,24 @@ void print_all(const char * const format, ...)
 
 	if (format != NULL)
 	{
-		len = strlen(format);
 		va_start(arg, format);
 
-		while (i < len)
+		while (format[i])
 		{
 			j = 0;
 			while (j < 4 && format[i] != data_type[j].id)
 				j++;
 
 			if (j < 4)
+			{
+				printf("%s", sep);
 				data_type[j].f(arg);
+				sep = ", ";
+			}
 			i++;
 		}
-		printf("\n");
-		va_end(arg);
 	}
+
+	printf("\n");
+	va_end(arg);
 }
