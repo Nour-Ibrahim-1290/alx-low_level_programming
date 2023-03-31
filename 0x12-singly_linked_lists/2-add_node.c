@@ -15,18 +15,26 @@ list_t *add_node(list_t **head, const char *str);
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *node = (list_t *) malloc(sizeof(list_t));
+	list_t *node = malloc(sizeof(list_t));
+	char *dup;
+
+	if (node == NULL)
+		return (NULL);
 
 	if (str == NULL)
 	{
-		node->str = strdup("(nil)");
-		node->len = 0;
+		free(node);
+		return (NULL);
 	}
-	else
+	dup = strdup(str);
+	if (dup == NULL)
 	{
-		node->str = strdup(str);
-		node->len = _strlen(str);
+		free(node);
+		return (NULL);
 	}
+
+	node->str = dup;
+	node->len = _strlen(dup);
 	node->next = *head;
 
 	*head = node;
