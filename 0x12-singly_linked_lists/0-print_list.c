@@ -4,22 +4,44 @@
 /**
  * print_list - print all nodes of a LinkedList
  * strting with head to tail nodes
- * @head: head of Linked List
+ * @h: head of Linked List
  *
  * Return: size of list
  */
-size_t print_list(const list_t *head)
+size_t print_list(const list_t *h)
 {
+	char *str;
+	unsigned int len, i;
 	size_t count = 0;
 
-	while (head)
+	while (h)
 	{
-		if (head->str == NULL)
-			printf("[0] (nil)\n");
+		/*assign str and len to print*/
+		str = h->str;
+		if (str == NULL)
+		{
+			str = "(nil)";
+			len = 0;
+		}
 		else
-			printf("[%d] %s\n", head->len, head->str);
+		{
+			len = h->len;
+		}
+		_putchar('[');
+		_putchar(len + '0');
+		_putchar(']');
+		_putchar(' ');
+
+		/*print str*/
+		i = 0;
+		while (str[i] != '\0')
+		{
+			_putchar(str[i]);
+			i++;
+		}
+		_putchar('\n');
 		count++;
-		head = head->next;
+		h = h->next;
 	}
 
 	return (count);
