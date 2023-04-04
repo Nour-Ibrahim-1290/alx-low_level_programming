@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include <stdio.h>
 #include "lists.h"
 
 /**
@@ -10,38 +10,22 @@
  */
 size_t print_list(const list_t *h)
 {
-	char *str;
-	unsigned int len, i;
 	size_t count = 0;
 
 	while (h)
 	{
-		/*assign str and len to print*/
-		str = h->str;
-		if (str == NULL)
+		if (h->str == NULL)
 		{
-			str = "(nil)";
-			len = 0;
+			printf("[0] (nil)\n");
+			count++;
+			h = h->next;
 		}
 		else
 		{
-			len = h->len;
+			printf("[%u] %s\n", h->len, h->str);
+			count++;
+			h = h->next;
 		}
-		_putchar('[');
-		_putchar(len + '0');
-		_putchar(']');
-		_putchar(' ');
-
-		/*print str*/
-		i = 0;
-		while (str[i] != '\0')
-		{
-			_putchar(str[i]);
-			i++;
-		}
-		_putchar('\n');
-		count++;
-		h = h->next;
 	}
 
 	return (count);
