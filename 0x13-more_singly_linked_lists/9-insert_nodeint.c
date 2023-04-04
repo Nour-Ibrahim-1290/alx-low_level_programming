@@ -24,27 +24,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (head == NULL)
 		return (NULL);
 
-	if (idx == 0)
+	while (at != (idx - 1) && node)
 	{
-		new_node->next = node;
-		*head = new_node;
-		return (new_node);
-	}
-
-	/*move to idx of LinkedList*/
-	while (node && node->next)
-	{
-		at++;
-		if (idx == at)
-		{
-			new_node->next = node->next;
-			node->next = new_node;
-			return (new_node);
-		}
 		node = node->next;
+		at++;
 	}
 
-	return (NULL);
+	if (at >= idx)
+		return (NULL);
+
+	new_node->next = node->next;
+	node->next = new_node;
+
+	return (node);
 }
 
 
