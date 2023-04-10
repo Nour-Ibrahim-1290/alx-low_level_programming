@@ -4,9 +4,9 @@
 
 
 /**
- * red_textfile - read a text file to certain size
+ * read_textfile - read a text file to certain size
  * @filename: the file pointer to readfrom
- * @letter: the number of letters you want to read
+ * @letters: the number of letters you want to read
  *
  * Return: void
  */
