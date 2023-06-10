@@ -16,7 +16,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/* Cannot create hash_table with size less than one*/
 	if (size < 1)
-		return NULL;
+		return (NULL);
 
 	new_table = malloc(sizeof(hash_table_t));
 	if (new_table == NULL)
@@ -27,7 +27,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (new_table->array == NULL)
 		return (NULL);
 
-	for (i = 0; i< size; i++)
+	for (i = 0; i < size; i++)
 		new_table->array[i] = NULL;
 
 	return (new_table);
