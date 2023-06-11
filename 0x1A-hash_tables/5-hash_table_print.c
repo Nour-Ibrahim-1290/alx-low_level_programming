@@ -13,7 +13,10 @@ void hash_table_print(const hash_table_t *ht)
 	hash_node_t *temp;
 	unsigned int flag = 0;
 
-	if ((ht == NULL) || (ht->size == 0))
+	if (ht == NULL)
+		return;
+
+	if (ht->size == 0)
 		printf("{}");
 
 	printf("{");
