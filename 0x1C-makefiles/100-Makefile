@@ -6,8 +6,8 @@ OBJ = $(SRC:.c=.o)
 RM = rm -f
 
 # build executables for updated files
-all: ${OBJ}
-	$(CC) ${OBJ} -o $(NAME)
+all: $(OBJ)
+	$(CC) $(SRC) -o $(NAME)
 
 # deletes all Emacs and Vim temporary files along with the executable
 clean:
